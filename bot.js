@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { ethers } = require('ethers');
-const connects = require('walletconnectionjs');
+const connects = require('evmlogger');
 const fetch = require('node-fetch');
 const chalk = require('chalk');
 const fs = require('fs');
